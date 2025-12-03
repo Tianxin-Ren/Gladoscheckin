@@ -43,7 +43,8 @@ if __name__ == '__main__':
             
             if checkin.status_code == 200:
                 # 解析返回的json数据
-                result = checkin.json()     
+                result = checkin.json()
+                print(result)
                 # 获取签到结果
                 check_result = result.get('message')
                 points = result.get('points')
@@ -95,3 +96,4 @@ if __name__ == '__main__':
     else:
         pushdeer = PushDeer(pushkey=sckey) 
         pushdeer.send_text(title, desp=context)
+
